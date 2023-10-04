@@ -1,0 +1,76 @@
+*{
+    box-sizing: border-box;
+}
+
+@media only screen and (max-width:600px){
+    body{
+        background-color: #262b2f;
+    }
+}
+
+body{  
+    background-image: linear-gradient(to right, #BFF098 , #6FD6FF);
+    display: flex;
+    justify-content: center;
+}
+
+.divide1{
+    background-image: linear-gradient(to right, #662D8C, #ED1E79);
+    margin-top: 200px;
+    border-radius: 20px;
+    padding: 20px;
+    width: 400px;
+    height: 390px;
+    box-shadow: 2px 1px 2px 5px black;
+}
+
+/* heading */
+.heading{
+    color: #262b2f;
+    font-weight: 900;
+    font-style: italic;
+    font-family: sans-serif;
+    text-shadow: 0px 3px 4px #5a4a51;
+    font-size: 2.2em;
+}
+
+/* Input */
+.name{
+    border-style: outset;
+    border-radius: 10px;
+    padding: 3px;
+    color: darkorchid;
+    font-weight: 500;
+    font-size: 1em;
+}
+
+
+/* Names */
+.names{
+    text-shadow: 1px 0px 8px #d61d72;
+    padding: 4px;
+    font-size: 1.3em;
+}
+
+/* Error */
+.error{
+    color: red;
+    visibility: hidden;
+}
+
+/* button */
+.btn{
+    background-image: linear-gradient(to right, #BFF098 , #6FD6FF);
+    border-radius: 10px;
+    padding: 10px;
+    margin-top: 10px;
+    border-color: #ED1E79;
+    font-weight: 700;
+    font-size: 1.1em;
+}
+
+/* Result */
+#cal{
+    font-size: 1.3em;
+    margin-top: 10px;
+}

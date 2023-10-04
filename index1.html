@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        
+        @media only screen and (max-width:600px){
+            body{
+                background-color: #262b2f;
+            }
+        }
+        
+        body{  
+            background-image: linear-gradient(to right, #BFF098 , #6FD6FF);
+            display: flex;
+            justify-content: center;
+        }
+        
+        .divide1{
+            background-image: linear-gradient(to right, #662D8C, #ED1E79);
+            margin-top: 200px;
+            border-radius: 20px;
+            padding: 20px;
+            width: 400px;
+            height: 390px;
+            box-shadow: 2px 1px 2px 5px black;
+        }
+        
+        /* heading */
+        .heading{
+            color: #262b2f;
+            font-weight: 900;
+            font-style: italic;
+            font-family: sans-serif;
+            text-shadow: 0px 3px 4px #5a4a51;
+            font-size: 2.2em;
+        }
+        
+        /* Input */
+        .name{
+            border-style: outset;
+            border-radius: 10px;
+            padding: 3px;
+            color: darkorchid;
+            font-weight: 500;
+            font-size: 1em;
+        }
+        
+        
+        /* Names */
+        .names{
+            text-shadow: 1px 0px 8px #d61d72;
+            padding: 4px;
+            font-size: 1.3em;
+        }
+        
+        /* Error */
+        .error{
+            color: red;
+            visibility: hidden;
+        }
+        
+        /* button */
+        .btn{
+            background-image: linear-gradient(to right, #BFF098 , #6FD6FF);
+            border-radius: 10px;
+            padding: 10px;
+            margin-top: 10px;
+            border-color: #ED1E79;
+            font-weight: 700;
+            font-size: 1.1em;
+        }
+        
+        /* Result */
+        #cal{
+            font-size: 1.3em;
+            margin-top: 10px;
+        }
+        
+    </style>
+    <body>
+        <div id="divide1" class="divide1">
+        <center><h1 class="heading">Love Calculator</h1></center>
+        <legend class="names">Your name</legend>
+        <input type="text" id="name" class="name name1">
+        <div id="name_error" class="error">Please type your name</div>
+        <legend class="names">Your crush name</legend>
+        <input type="text" id="crush" class="name name2"><br>
+        <div id="crush_error" class="error">Please type Your Crush name</div>
+        <center class="center"><button class="btn" onclick="myfun()">Calculate</button></center>
+        <center><div class="divide2" id="cal"></div></center>
+        </div>
+    </body>
+
+    <script>
+		let divide1 = document.getElementById("divide1");
+		let cal = document.getElementById("cal");
+		let name_error = document.getElementById("name_error");
+		let crush_error = document.getElementById("crush_error");
+		let btn = document.getElementById("btn");
+		let name = document.getElementById("name");
+		let crush0 = document.getElementById("crush"); 
+
+		let random;
+		let name_you;
+		let crush_name;
+		let you;
+		let crush;
+
+		function myfun(){
+				name_you = document.getElementById("name").value;
+				crush_name = document.getElementById("crush").value;
+
+				if(name_you == "" && crush_name == ""){
+					name_error.style.visibility = "visible";
+					crush_error.style.visibility = "visible";
+				}
+				if(name_you == ""){
+					name_error.style.visibility = "visible";
+				}
+				else if(crush_name == ""){
+					name_error.style.visibility = "hidden";
+					crush_error.style.visibility = "visible";
+				}
+				else{
+					name_error.style.visibility = "hidden";
+					crush_error.style.visibility = "hidden";
+					my2fun();
+				}
+		}
+		function my2fun(){
+				if(you == name_you){
+					alert("Give another Name");
+				}
+				else if(crush == crush_name){
+					alert("Give another crush name");
+				}
+				else{
+					my3fun();
+					you = name_you;
+					crush = crush_name;
+				}
+		}
+
+		function my3fun(){
+			random = Math.floor(Math.random() * 100);
+			cal.innerHTML = `${name_you} and ${crush_name} has ${random}% love`;
+		}
+
+
+		function enter0(event){
+			if(event.key === "Enter"){
+				crush0.click();
+			}
+		}
+
+		function enter1(event){
+			if(event.code === "Enter"){
+				btn.click();
+			}
+		}
+
+		crush0.addEventListener('keypress',enter1);
+		name.addEventListener("keypress",enter0);
+    </script>
+
+</html>
